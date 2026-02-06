@@ -5,7 +5,7 @@ public class Factorizer {
     public ArrayList<Integer> factorize(int numToFactorize) {
         ArrayList<Integer> factors = new ArrayList<>();
 
-        // Requirement: If <= 1, return empty list
+        
         if (numToFactorize <= 1) {
             return factors;
         }
