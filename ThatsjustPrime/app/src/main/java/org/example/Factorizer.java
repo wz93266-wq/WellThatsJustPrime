@@ -10,7 +10,7 @@ public class Factorizer {
             return factors;
         }
 
-        // Start with the smallest prime
+        
         int divisor = 2;
         int tempNum = numToFactorize;
 
