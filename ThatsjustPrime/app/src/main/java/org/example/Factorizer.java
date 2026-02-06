@@ -1,15 +1,27 @@
 package org.example;
 import java.util.ArrayList;
-public class Factorizer {
-    public ArrayList<Integer> factorize(int numToFactorizeTo) {
-        ArrayList<Integer> numArray = new ArrayList<>();
 
-        for (int i = 1; i < numToFactorizeTo;i++) {
-            if (numToFactorizeTo % i == 0) {
-                numArray.add(i);
-            }
+public class Factorizer {
+    public ArrayList<Integer> factorize(int numToFactorize) {
+        ArrayList<Integer> factors = new ArrayList<>();
+
+        // Requirement: If <= 1, return empty list
+        if (numToFactorize <= 1) {
+            return factors;
         }
-        numArray.add(numToFactorizeTo);
-        return numArray;
+
+        // Start with the smallest prime
+        int divisor = 2;
+        int tempNum = numToFactorize;
+
+        while (tempNum > 1) {
+            while (tempNum % divisor == 0) {
+                factors.add(divisor);
+                tempNum /= divisor;
+            }
+            divisor++;
+        }
+
+        return factors;
     }
 }
